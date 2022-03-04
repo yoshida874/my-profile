@@ -2,12 +2,17 @@
 /*-------------------------------------------
 デフォルトのスタイルを設定（基本いじらない）
 -------------------------------------------*/
+:root {
+  --main-text: #383e45;
+  --main-link: #24292e;
+}
+
 html {
   font-size: 100%;
 }
 
 body {
-  color: #383e45;
+  color: var(--main-text);
   font-size: 0.9rem;
 }
 
@@ -21,6 +26,16 @@ img {
 
 li {
   list-style: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text: #fff;
+    --main-link: #fff;
+  }
+  body {
+    background-color: #171515;
+  }
 }
 
 /*-------------------------------------------
@@ -49,6 +64,14 @@ li {
   margin-right: 2rem;
 }
 
+.header a {
+  color: var(--main-link);
+}
+
+.header a:hover {
+  opacity: 0.7;
+}
+
 .header ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,14 +81,6 @@ li {
 
 .header li {
   margin-left: 30px;
-}
-
-.header li a {
-  color: #24292e;
-}
-
-.header li a:hover {
-  opacity: 0.7;
 }
 
 /*-------------------------------------------
@@ -85,7 +100,7 @@ li {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 60px;
-  border-bottom: solid 1px #383e45;
+  border-bottom: solid 1px var(--main-text);
 }
 
 .content-title {
